@@ -56,13 +56,92 @@ https://youtu.be/ju9F8OvnL4E?si=49VWlAV0PrMY_Osj
 
 ## Indexes null or not null
 
+Пререквизиты:
+таблица public.pgconf, rows count 10_000_000
+
+| Column      | TYPE                    | Collation | Nullable | Default |
+| ----------- |-------------------------|-----------|----------|---------|
+| id          | bigint                  |           | Not null |         |
+| fk_id       | bigint                  |           |          |         |
+| state       | text                    |           |          |         |
+| amount      | numeric                 |           |          |         |
+| item        | text                    |           |          |         |
+| created_at  | timestamp with timezone |           |          |         |
+
+Indexes: 
+  pgconf_pkey PRIMARY KEY, btree(id)
+
+FK constraints:
+  pgconf_fk_id_fkey FOREIGN KEY (fk_id) REFERENCES pgconf(id)
+
+Size pgconf 816 MB.
+Size pgconf_pkey 214 MB 
 
 
+Удалим строку:\
+`delete from pgconf where id = 10;`
+
+_Delete on pgconf\
+-> Index Scan using pgconf_pkey on pgconf\
+Index Cond: (id = 10)\
+Planning Time: 0.043 ms\
+**Trigger for constraint pgconf_fk_id_fkey: time=690.455 calls=1**\
+Execution Time: **690.515 ms**_
+
+Самое долгое время занимает поиск по constraint. Даже с двумя worker очень долго. 
+Запрос не долгий, небольшой, может непопасть в логи, и очень неоптимальный.
+
+Под капотом будет:
+
+`select * from pgconf where fk_id = 10;`\
+Gather\
+Workers Planned: 2\
+Workers Launched: 2\
+-> **Parallel Seq Scan on pgconf**\
+Filter: (fk_id = 10)\
+Rows Removed by Filter: 3333333\
+Planning Time: 0.059 ms\
+Execution Time: 281.468 ms\
+
+Для FK лучше создавать индекс, чтобы всякие проверки работали быстро.
+Работать станет быстрее. Но можно пойти дальше -> зайдем в табличку pg_stats
+
+select * from pg_stats where tablename = 'pgconf' and attname = 'fk_id';\
+
+|                   |                | 
+|-------------------|----------------| 
+| tablename         | pgconf         | 
+| attname           | fk_id          | 
+| null_frac         | **0.92943335** |  
+| n_distinct        | -0.070566654   | 
+| most_common_vals  | null           | 
+| most_common_freqs | null           | 
+| correlation       | 0.0095442245   | 
+
+Почти 93 процента пустых значений. Остальные поля по данным не важны при таком кол-ве нуллов.
+Попробуем улучшить индекс, добавим условие nonnull. Сделаем частичный индекс.
+` create index fk_not_null on pgconf (fk_id) where fk_id is not null; `\
+Не ускорит запрос, но существенно сохранит место на диске 
+
+Но этот индекс будет прекрасно работать на запросе по равенству или неравенству (PG сам поймет, что мы ищем non null значения).
+В общем случае данный индекс будет применяться, когда в запросе есть условие аналогичное или приводимое к условию частичного индекса.
+
+`select * from pgconf where fk_id = 10;`
+**Index Scan using fk_not_null** on pgconf
+Index Cond: (fk_id = 10)
+Planning Time: 0.080 ms
+Execution Time: 0.027 ms
+ 
+ ### Результаты 
+Time: 690.713 ms vs 0.336 ms
+**Ускорение в 2055 раз!**
+pgconf_pkey : 214 MB
+fk : 215 MB
+fk_not_null : 15 MB
+**Уменьшение размеров в 14 раз!**
 
 
-
-
-
+## Indexes partial
 
 
 
