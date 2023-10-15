@@ -1,6 +1,5 @@
-# Андрей Сальников — Индексы в PostgreSQL. Как понять, что создавать
+# [Андрей Сальников — Индексы в PostgreSQL. Как понять, что создавать](https://youtu.be/ju9F8OvnL4E?si=49VWlAV0PrMY_Osj)
 
-https://youtu.be/ju9F8OvnL4E?si=49VWlAV0PrMY_Osj
 
 ## Плюсы индексов:
 
