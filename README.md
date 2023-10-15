@@ -6,7 +6,7 @@
 * [Андрей Сальников — Индексы в PostgreSQL. Как понять, что создавать](PostgresIndexes.md)
 
 #### SYSTEM DESIGN
-* [Владимир Маслов — System Design. Как построить распределенную систему и пройти собеседование](https://www.youtube.com/watch?v=popkBBjbAv8)
+* [Владимир Маслов — System Design. Как построить распределенную систему и пройти собеседование](./MaslovSystemDesignInterview/SystemDesign.md)
 
 
 ## IN PROGRESS
