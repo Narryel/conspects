@@ -22,3 +22,4 @@
 * [Готовимся к собеседованию на программиста / Алгоритмы, System Design, Soft skills](https://www.youtube.com/watch?v=_NhmGvYs8_g)
 * [Что такое Project Loom — Иван Лягаев, Тинькофф](https://youtu.be/x1VZo-SPl1k?si=guSLrIh7vExlIgHm)
 * [Алексей Жидков — Рациональный подход к декомпозиции систем на модули или микросервисы](https://www.youtube.com/watch?v=7u7LGhXlpcE)
+* [Владимир Ситников — B-Tree индексы в базах данных на примере Spring Boot-приложений, PostgreSQL, JPA](https://www.youtube.com/watch?v=y-Wtyvme4gE)
