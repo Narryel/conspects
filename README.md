@@ -7,10 +7,12 @@
 
 #### SYSTEM DESIGN
 * [Владимир Маслов — System Design. Как построить распределенную систему и пройти собеседование](./MaslovSystemDesignInterview/SystemDesign.md)
+* [Алексей Жидков — Рациональный подход к декомпозиции систем на модули или микросервисы](./microservices/DecomposingToMicroservices.md)
 
 
 ## IN PROGRESS
 * [Мартин Клепманн - Высоконагруженные приложения](./klepmann/Kleppmann_Designing_Data_Intensive_Applications.md)
+* [victorbrandalise.com Coroutines (Part I) – Grasping the Fundamentals](https://victorbrandalise.com/coroutines-part-i-grasping-the-fundamentals/)
 
 
 ## TODO
@@ -23,3 +25,5 @@
 * [Что такое Project Loom — Иван Лягаев, Тинькофф](https://youtu.be/x1VZo-SPl1k?si=guSLrIh7vExlIgHm)
 * [Алексей Жидков — Рациональный подход к декомпозиции систем на модули или микросервисы](https://www.youtube.com/watch?v=7u7LGhXlpcE)
 * [Владимир Ситников — B-Tree индексы в базах данных на примере Spring Boot-приложений, PostgreSQL, JPA](https://www.youtube.com/watch?v=y-Wtyvme4gE)
+
+* [Евгений Сулейманов - Основы системного дизайна за 30 минут](https://www.youtube.com/watch?v=jAi0hZTmOag)
