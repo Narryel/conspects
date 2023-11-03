@@ -29,6 +29,8 @@
 [Юрий Самсонов — От REST к GraphQL: приключение на 20 минут](https://www.youtube.com/watch?v=90Ul1zDNMYA)
 [Олег Клименко — Spring Cloud в микросервисной архитектуре, или История одного внедрения](https://www.youtube.com/watch?v=IVumSJYvFtQ)
 [Сергей Богданов (Газпромбанк) — Диагностика проблем в Java-приложениях](https://www.youtube.com/watch?v=I4LoHfBFWTI)
+[Ключевые структуры данных - Евгений Сулейманов](https://www.youtube.com/watch?v=rXEpOUiNjZM&ab_channel=EugeneSuleimanov)
+[Rest](https://www.youtube.com/watch?v=XaTwnKLQi4A&t=1s&ab_channel=UlbiTV)
 
 
 ### Concurrency
