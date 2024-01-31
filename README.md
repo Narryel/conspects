@@ -31,6 +31,11 @@
 * [Сергей Богданов (Газпромбанк) — Диагностика проблем в Java-приложениях](https://www.youtube.com/watch?v=I4LoHfBFWTI)
 * [Ключевые структуры данных - Евгений Сулейманов](https://www.youtube.com/watch?v=rXEpOUiNjZM&ab_channel=EugeneSuleimanov)
 * [Rest](https://www.youtube.com/watch?v=XaTwnKLQi4A&t=1s&ab_channel=UlbiTV)
+* [Может ли Java быть быстрой? Сравнение производительности Helidon Níma и Spring](https://habr.com/ru/articles/765050/)
+* [Что такое Project Loom — Иван Лягаев, Тинькофф](https://www.youtube.com/watch?v=x1VZo-SPl1k)
+* [Иван Углянский — Thread Wars: проект Loom наносит ответный удар](https://www.youtube.com/watch?v=kwS3OeoVCno)
+* [Илья Старченко рассказал про новомодный project loom](https://space.tinkoff.ru/blog/entry/itogi-dobryij-vecher-java20231222123656/)
+* [Thread Wars: войны клонов на страницах Wiki](https://jokerconf.com/talks/726fdf3540524be28c8f5901c1800583/?referer=/schedule/days/)
 
 
 ### Concurrency
